@@ -122,7 +122,7 @@ export default defineConfig({
         },
 
         editLink: {
-            pattern: "https://gitee.com/yiguxianyun/laoyukezhan/edit/master/docs/:path",
+            pattern: "https://github.com/amtf-ly/laoyukezhan/edit/master/docs-code/:path",
             text: "去改正",
         },
 
