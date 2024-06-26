@@ -4,7 +4,7 @@
     "baseUrl": ".",
     "paths": {
       "@the/*": [
-        "docs/.vitepress/theme/*"
+        "docs-code/.vitepress/theme/*"
       ],
     },
   },
