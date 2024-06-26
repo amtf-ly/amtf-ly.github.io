@@ -4,6 +4,7 @@ import { resolve } from "path";
 // https://vitejs.dev/config/
 export default defineConfig({
   build: {
+    // vitepress不支持？使用package.json配置
     // outDir: './amtf-laoyu', 
   },
   plugins: [vue()],

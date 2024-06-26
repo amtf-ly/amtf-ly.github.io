@@ -21,7 +21,7 @@
     "vp": "vite preview",
     "d": "yarn dev",
     "dev": "vitepress dev docs",
-    "build": "vitepress build docs --outDir .dist/amtf-laoyu",
+    "build": "vitepress build docs --outDir dist",
     "preview": "vitepress preview docs"
   },
   "dependencies": {

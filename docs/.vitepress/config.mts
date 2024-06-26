@@ -31,7 +31,7 @@ export default defineConfig({
     vue: {
         template: { transformAssetUrls },
     },
-    base: "/amtf-laoyu/",
+    base: "/laoyukezhan/",
     vite: {
         server: {
             // open: true, //自动打开浏览器
@@ -94,18 +94,18 @@ export default defineConfig({
         ['meta', { name: 'viewport', content: 'user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1,width=device-width' }],
         
     //将 favicon.ico 放在公共目录中，如果设置了 base(部署在网站子路径时)，则使用 /base/favicon.ico
-    ['link', { rel: 'icon', href: '/amtf-laoyu/favicon.ico' }],
-    ['link', { rel: 'icon', type: 'text/plain', href: '/amtf-laoyu/favicon.ico' }],
-    ['link', { rel: 'icon', type: 'image/png', sizes: "128x128", href: '/amtf-laoyu/icons/amtf-ml128.png' }],
-    ['link', { rel: 'icon', type: 'image/png', sizes: "96x96", href: '/amtf-laoyu/icons/amtf-ml96.png' }],
-    ['link', { rel: 'icon', type: 'image/png', sizes: "32x32", href: '/amtf-laoyu/icons/amtf-ml32.png' }],
-    ['link', { rel: 'icon', type: 'image/png', sizes: "16x16", href: '/amtf-laoyu/icons/amtf-m16.png' }],
-    ['link', { rel: 'icon', type: 'image/ico', sizes: "16x16", href: '/amtf-laoyu/amtf.ico' }],
+    ['link', { rel: 'icon', href: '/laoyukezhan/favicon.ico' }],
+    ['link', { rel: 'icon', type: 'text/plain', href: '/laoyukezhan/favicon.ico' }],
+    ['link', { rel: 'icon', type: 'image/png', sizes: "128x128", href: '/laoyukezhan/icons/amtf-ml128.png' }],
+    ['link', { rel: 'icon', type: 'image/png', sizes: "96x96", href: '/laoyukezhan/icons/amtf-ml96.png' }],
+    ['link', { rel: 'icon', type: 'image/png', sizes: "32x32", href: '/laoyukezhan/icons/amtf-ml32.png' }],
+    ['link', { rel: 'icon', type: 'image/png', sizes: "16x16", href: '/laoyukezhan/icons/amtf-m16.png' }],
+    ['link', { rel: 'icon', type: 'image/ico', sizes: "16x16", href: '/laoyukezhan/amtf.ico' }],
     ['meta', { name: 'theme-color', content: '#5f67ee' }],
     ['meta', { name: 'og:type', content: 'website' }],
     ['meta', { name: 'og:locale', content: 'en' }],
     ['meta', { name: 'og:site_name', content: 'amtf' }],
-    ['meta', { name: 'og:image', content: '/amtf-laoyu/icons/amtf-ml128.png' }],
+    ['meta', { name: 'og:image', content: '/laoyukezhan/icons/amtf-ml128.png' }],
     ['script', { src: 'https://cdn.usefathom.com/script.js', 'data-site': 'AZBRSFGG', 'data-spa': 'auto', defer: '' }]
   ],
     themeConfig: {
@@ -122,7 +122,7 @@ export default defineConfig({
         },
 
         editLink: {
-            pattern: "https://gitee.com/yiguxianyun/amtf-laoyu/edit/master/docs/:path",
+            pattern: "https://gitee.com/yiguxianyun/laoyukezhan/edit/master/docs/:path",
             text: "去改正",
         },
 

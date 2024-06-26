@@ -151,10 +151,10 @@ onMounted(() => {
   // for (var i = 0; i < links.length; i++) {
   //   var link = links[i];
 
-  //   // 检查link元素是否有href属性且包含'/amtf-laoyu/'
-  //   if (link.href && link.href.includes('/amtf-laoyu/')) {
+  //   // 检查link元素是否有href属性且包含'/laoyukezhan/'
+  //   if (link.href && link.href.includes('/laoyukezhan/')) {
   //     // 替换href属性值
-  //     link.href = link.href.replace('/amtf-laoyu/', '/');
+  //     link.href = link.href.replace('/laoyukezhan/', '/');
   //   }
   // }
 
