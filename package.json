@@ -1,0 +1,41 @@
+{
+  "name": "amtf",
+  "private": false,
+  "type": "module",
+  "devDependencies": {
+    "@mdit-vue/shared": "^1.0.0",
+    "@quasar/vite-plugin": "^1.6.0",
+    "@vitejs/plugin-vue": "^4.5.0",
+    "markdown-it-mathjax3": "^4.3.2",
+    "sass": "1.70.0",
+    "unplugin-auto-import": "^0.17.5",
+    "unplugin-element-plus": "^0.8.0",
+    "unplugin-vue-components": "^0.26.0",
+    "vite": "^5.0.0",
+    "vitepress": "^1.0.0-rc.22",
+    "vue-i18n": "^9.2.2"
+  },
+  "scripts": {
+    "vd": "vite",
+    "vb": "vite build",
+    "vp": "vite preview",
+    "d": "yarn dev",
+    "dev": "vitepress dev docs",
+    "build": "vitepress build docs --outDir .dist/amtf-laoyu",
+    "preview": "vitepress preview docs"
+  },
+  "dependencies": {
+    "@quasar/extras": "^1.16.7",
+    "@vueuse/core": "^10.9.0",
+    "ant-design-vue": "^4.0.6",
+    "axios": "^1.6.2",
+    "element-plus": "^2.7.0",
+    "lodash.debounce": "^4.0.8",
+    "pinia": "^2.1.7",
+    "pinia-plugin-persist": "^1.0.0",
+    "quasar": "^2.13.0",
+    "vue": "^3.3.8",
+    "vue-router": "^4.2.5",
+    "xlsx": "^0.18.5"
+  }
+}

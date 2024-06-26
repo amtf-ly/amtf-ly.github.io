@@ -1,0 +1,109 @@
+@import './quasar.variables.scss'
+.q-img__content > div
+  padding: 2px
+body , html.dark ,html
+  font-size: $小字 !important
+  font-family: 'KaiTi' !important
+
+.q-btn
+  font-size: $小字
+  line-height: 1em
+.小字
+  font-size: $小字
+.中字
+  font-size: ($小字*1.2)
+
+.黑底白字
+  background: rgba(0, 0, 0, 0.4)
+  color: #fff
+summary
+  display: list-item
+
+// 深色切换动画
+::view-transition-old(root),
+::view-transition-new(root)
+  animation: none
+  mix-blend-mode: normal
+
+::view-transition-old(root)
+  z-index: 1
+
+::view-transition-new(root)
+  z-index: 9999
+
+.dark::view-transition-new(root)
+  z-index: 1
+
+.dark::view-transition-old(root)
+  z-index: 9999
+
+.涟漪容器
+  position: absolute
+  background-color: rgba(255, 0, 0, 0)
+  pointer-events: none
+// 让鼠标事件穿透到后面的元素
+  overflow: hidden
+
+  // ~ 所有兄弟元素
+.无界~.涟漪容器
+  overflow: visible
+
+.涟漪容器 span
+  // .涟漪 + span{
+  // 绝对定位
+  position: absolute
+  width: 30px
+  height: 30px
+  background-color: $primary
+  transform: translate(-50%, -50%)
+  border-radius: 50%
+  // 执行动画
+  animation: 涟漪动画 1s ease
+  // 设置元素不对指针事件做出反应
+  pointer-events: none
+
+.涟漪容器.dark span
+  background-color: #fff
+
+// 定义动画
+@keyframes 涟漪动画
+  from
+    width: 0
+    height: 0
+    opacity: 0.5
+
+  to
+    width: 400px
+    height: 400px
+    opacity: 0
+
+.放大显影
+  width: 100%
+  max-width: 350px
+  transition: transform $header-quick-transition, box-shadow $header-quick-transition
+
+  &:hover
+    // !important needed when used with flat cards
+    box-shadow: 0 8px 8px 0 rgba($dark, 0.2) !important
+    transform: scale(1.05)
+    z-index: 999
+
+.dark
+  .放大显影
+    &:hover
+      box-shadow: 0 4px 8px 0 rgba($brand-primary, 0.8) !important
+
+.文字放大显影
+  transition: transform $header-quick-transition, text-shadow $header-quick-transition
+  &:hover
+    // !important needed when used with flat cards
+    // box-shadow: 0 8px 8px 0 rgba($dark, 0.2) !important
+    text-shadow: -6px -1px 5px rgba($dark, 0.8) !important
+    transform: scale(1.5)
+    z-index: 999
+    cursor: none
+.dark
+  .文字放大显影
+    &:hover
+      // box-shadow: 0 4px 8px 0 rgba($brand-primary, 0.8) !important
+      text-shadow: -6px -1px 7px rgba($brand-primary, 0.8) !important

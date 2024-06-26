@@ -1,0 +1,22 @@
+@font-face {
+  font-family: "iconfont"; /* Project id 4316262 */
+  src: url('iconfont.woff2?t=1699151563200') format('woff2'),
+       url('iconfont.woff?t=1699151563200') format('woff'),
+       url('iconfont.ttf?t=1699151563200') format('truetype');
+}
+[class*="amtf-i-"] {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.amtf-i-zitisuoxiao:before {
+  content: "\e60e";
+}
+
+.amtf-i-zitifangda:before {
+  content: "\e60f";
+}
+

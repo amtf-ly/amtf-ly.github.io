@@ -1,0 +1,147 @@
+@charset "UTF-8";
+/* .vitepress/theme/custom.css */
+:root {
+  --vp-font-family-base: 'KaiTi', sans-serif;
+  --vp-font-family-mono: 'KaiTi', monospace;
+  --vp-nav-height: 64px;
+  --vp-nav-bg-color: var(--vp-c-bg);
+  --vp-nav-screen-bg-color: var(--vp-c-bg);
+  --vp-nav-logo-height: 24px;
+  /* --vp-c-brand-1: #ffde09;
+    --vp-c-brand-2: #f3f700; */
+  --amtf: #00B4FF;
+  --amtf05: rgba(0, 180, 255, 0.5);
+  --amtf02: rgba(0, 180, 255, 0.2);
+  --amtf014: rgba(0, 180, 255, 0.14);
+  --amtf012: rgba(0, 180, 255, 0.12);
+  --最小字体:1.05rem;
+}
+
+:root {
+  /* --vp-sidebar-width: 500px; */
+  --vp-sidebar-bg-color: var(--vp-c-bg-alt);
+}
+body {
+  font-size: 18px !important;
+  font-family: 'KaiTi' !important;
+}
+
+button {
+  /* 阴影 */
+  /* box-shadow: 3px 5px 10px rgba(0,0,0,0.1); */
+  /* box-shadow:rgba(0, 0, 0, 0.2) 0px 3px 1px -2px, rgba(0, 0, 0, 0.14) 0px 2px 2px 0px, rgba(0, 0, 0, 0.12) 0px 1px 5px 0px; */
+}
+
+button:hover {
+  /* box-shadow: 3px 5px 10px rgba(0,0,0,0.2); */
+  /* box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 4px -1px, rgba(0, 0, 0, 0.14) 0px 4px 5px 0px, rgba(0, 0, 0, 0.12) 0px 1px 10px 0px */
+}
+
+.影子:hover {
+  /* box-shadow: 3px 5px 10px var(--amtf02); */
+  box-shadow: var(--amtf02) 0px 2px 4px -1px, var(--amtf014) 0px 4px 5px 0px, var(--amtf012) 0px 1px 10px 0px;
+  border-color:var(--vp-c-brand-1);
+  border: 8px solid transparent;
+}
+
+.涟漪容器 {
+  position: absolute;
+  background-color: rgba(255, 0, 0, 0);
+  pointer-events: none;
+  /* 让鼠标事件穿透到后面的元素 */
+  overflow: hidden;
+}
+
+/* ~ 所有兄弟元素 */
+.无界~.涟漪容器 {
+  overflow: visible;
+}
+
+.涟漪容器 span {
+  /* .涟漪 + span{ */
+  /* 绝对定位 */
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: #000;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  /* 执行动画 */
+  animation: 涟漪动画 1s ease;
+  /* 设置元素不对指针事件做出反应 */
+  pointer-events: none;
+}
+.涟漪容器.dark span {
+  background-color: #fff;
+}
+
+/* 定义动画 */
+@keyframes 涟漪动画 {
+  from {
+    width: 0;
+    height: 0;
+    opacity: 0.5;
+  }
+
+  to {
+    width: 400px;
+    height: 400px;
+    opacity: 0;
+  }
+}
+
+.text-subtitle2,  .q-field, .q-field__label, .VPNavBarMenuLink {
+  font-size: var(--最小字体) !important;
+}
+.最小字体 {
+  font-size: var(--最小字体) !important;
+}
+.VPButton.medium ,.text,.title {
+  font-size: var(--最小字体) !important;
+}
+
+th {
+  font-size: var(--最小字体) !important;
+}
+td {
+  font-size: var(--最小字体) !important;
+}
+
+.q-item__section--side {
+  align-items: center !important;
+}
+
+.加粗 .q-tab__label{
+  font-size: 16px;
+  font-weight: 700 ;
+}
+
+
+/**
+  顶部导航模块样式修改
+**/
+.VPNavBarTitle .title {
+  transition: all 0.25s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+
+.VPNavBarTitle .title:hover {
+  transform: scale(1.1);
+  color: #bd34fe;
+}
+
+.VPNavBarTitle .title:hover .VPImage {
+  transform: scale(1.25);
+}
+
+.VPNavBarTitle .title .VPImage {
+  transition: transform 0.5s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+  height: 40px;
+  border-radius: 50%;
+}
+
+.q-drawer-container .q-drawer{
+  background: transparent !important;
+}
+.背景透明{
+  background: transparent !important;
+}
