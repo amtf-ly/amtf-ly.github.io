@@ -17,22 +17,25 @@
           </q-item>
         </q-list> -->
 
-        <a未完待续 :data="a4.data.未完待续项目" 标题="未完待续👇……" class="q-mb-lg"/>
+        <a未完待续 :data="a4.data.未完待续项目" 标题="未完待续👇……" class="q-mb-lg" />
 
         <q-btn-group push dense class="联系方式">
-          <q-btn color="orange-2" glossy dense text-color="black" push :label="`微信:${a4.data.联系方式.微信}`" icon="a4laba" @click="复制(a4.data.联系方式.微信)"/>
-          <q-btn color="orange-3" glossy dense text-color="black" push :label="`QQ:${a4.data.联系方式.QQ}`" @click="复制(a4.data.联系方式.QQ)"/>
-          <q-btn color="orange-4" glossy dense text-color="black" push :label="`QQ群:${a4.data.联系方式.QQ群}`" @click="复制(a4.data.联系方式.QQ群)"/>
+          <q-btn color="orange-2" glossy dense text-color="black" push :label="`微信:${a4.data.联系方式.微信}`" icon="a4laba"
+            @click="复制(a4.data.联系方式.微信)" />
+          <q-btn color="orange-3" glossy dense text-color="black" push :label="`QQ:${a4.data.联系方式.QQ}`"
+            @click="复制(a4.data.联系方式.QQ)" />
+          <q-btn color="orange-4" glossy dense text-color="black" push :label="`QQ群:${a4.data.联系方式.QQ群}`"
+            @click="复制(a4.data.联系方式.QQ群)" />
           <q-btn color="orange-5" glossy dense text-color="black" push :label="`bili`" icon-right="call_made"
             :href="a4.data.联系方式.bili" target="_blank" />
         </q-btn-group>
 
         <!-- <a收费服务 :data="收费服务项目" 标题="收费服务项目" /> -->
       </div>
-      <div class="image" >
+      <div class="image">
         <div class="image-container">
-          <div class="image-bg"></div><img class="VPImage 无界 image-src" src="amtf-无量寿.png" alt="amtf图片不见了"
-            @click="添加涟漪">
+          <div class="image-bg"></div><img class="VPImage 无界 image-src" src="amtf-无量寿.png" alt="amtf图片不见了" @click="添加涟漪"
+            @mousemove="鼠标移动">
         </div>
       </div>
     </div>
@@ -45,19 +48,19 @@ import { Notify } from 'quasar'
 
 function 复制(params) {
   copyToClipboard(params)
-  .then(() => {
-    // 成功!
-    Notify.create({
-    message: params+'    已复制',
-    position: 'center',
-    closeBtn:true,
-    timeout: 1000,
-    type:"positive",
-  })
-  })
-  .catch(() => {
-    // 失败
-  })
+    .then(() => {
+      // 成功!
+      Notify.create({
+        message: params + '    已复制',
+        position: 'center',
+        closeBtn: true,
+        timeout: 1000,
+        type: "positive",
+      })
+    })
+    .catch(() => {
+      // 失败
+    })
 
 }
 
@@ -73,13 +76,33 @@ import a未完待续 from './未完待续.vue'
 // import a收费服务 from './收费服务.vue'
 const { 添加涟漪 } = useAmtf()
 
+let throttleTimeout;
+function 鼠标移动(e) {
+  // 清除之前设置的定时器，确保不会在短时间内连续触发
+  clearTimeout(throttleTimeout);
+
+  // 设置新的定时器，0.2秒后执行处理函数
+  throttleTimeout = setTimeout(function () {
+    // console.log('Mouse moved');
+    // console.log(`e 👉`, e)
+    添加涟漪(e)
+    // 在这里可以添加你想要执行的代码
+  }, 12); // 200毫秒 = 0.2秒
+}
+
+
+// function 鼠标移动(e) {
+//   console.log(`e 👉`,e)
+
+// }
+
 import { withBase, useData } from 'vitepress'
 import axios from "axios";
 
 import { a4_store } from '@the/stores/amtf_store'
 const {
-		a4
-	} = a4_store()
+  a4
+} = a4_store()
 
 
 // const 简介 = ref([{}, {}])
