@@ -142,12 +142,19 @@ summary {
         z-index: 999;
     }
 }
+
 .文字放大显影 {
     transition: transform $header-quick-transition, text-shadow $header-quick-transition;
     &:hover {
         text-shadow: -6px -1px 5px rgba($dark, 0.8) !important;
         transform: scale(1.5);
         z-index: 999;
+        cursor: none;
+    }
+}
+
+.隐藏鼠标 {
+    &:hover {
         cursor: none;
     }
 }

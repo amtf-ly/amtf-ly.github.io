@@ -32,9 +32,9 @@
 
         <!-- <a收费服务 :data="收费服务项目" 标题="收费服务项目" /> -->
       </div>
-      <div class="image">
+      <div class="image 隐藏鼠标">
         <div class="image-container">
-          <div class="image-bg"></div><img class="VPImage 无界 image-src" src="amtf-无量寿.png" alt="amtf图片不见了" @click="添加涟漪"
+          <div class="image-bg"></div><img class="VPImage 无界 image-src " src="amtf-无量寿.png" alt="amtf图片不见了" @click="添加涟漪"
             @mousemove="鼠标移动">
         </div>
       </div>
