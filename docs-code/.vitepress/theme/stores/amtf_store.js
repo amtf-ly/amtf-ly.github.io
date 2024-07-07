@@ -17,7 +17,25 @@ import {
 export const a4_store = defineStore("amtf", {
 	// 为了完整类型推理，推荐使用箭头函数
 	state: () => {
-		const a4 = reactive({ data: { 联系方式: "", 低调广告: [{}] } })
+		const a4 = reactive({
+			data: { 联系方式: "", 低调广告: [{}] },
+			能量表: [{}]
+		})
+
+		// https://env-00jxgn6qwtfx.dev-hz.cloudbasefunction.cn/a_admin/getall_nengliang
+
+		axios({
+			method: "get",
+			url: `https://env-00jxgn6qwtfx.dev-hz.cloudbasefunction.cn/a_admin/getall_nengliang`
+		}).then(({ data }) => {
+			console.log('data :>> ', data);
+			a4.能量表 = data
+			return data;
+		}).catch(() => {
+			throw "出错……";
+		}).catch((error) => {
+			console.error(error);
+		});
 
 		axios({
 			method: "get",
