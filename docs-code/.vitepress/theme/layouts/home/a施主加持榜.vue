@@ -5,24 +5,35 @@
         <span class="小字">{{ 标题 }} </span>
       </q-banner>
 
-      <q-list bordered separator>
-        <q-item v-ripple v-for="i in data" :class="背景色[i.名称]" :key="i.名称" clickable tag="label">
-          <q-item-section side>
-            <q-checkbox v-model="i.完成" />
-          </q-item-section>
-          <q-item-section>
-            <q-item-label v-html="i.名称"></q-item-label>
-          </q-item-section>
-          <q-item-section>
-            <A进度条 :item="i" />
-          </q-item-section>
-          <q-item-section side>
-            <div class="row">
-              <q-btn flat round dense color="primary" label="🚀" :href="withBase(i.to)"></q-btn>
-            </div>
-          </q-item-section>
-        </q-item>
-      </q-list>
+      <q-table class="表头色" title="柜体柜门类" :rows="data" :columns="columns" row-key="id" binary-state-sort
+          :rows-per-page-options="[0]" separator="cell" hide-bottom>
+          <template v-slot:top>
+            <div class=" q-table__title">柜体柜门类</div>
+            <q-space></q-space>
+            <!-- <q-btn color="positive " icon="add" dense size="sm" label="新增" @click="store.add()" outline /> -->
+
+          </template>
+          <template v-slot:header="props">
+            <q-tr :props="props">
+              <q-th auto-width />
+              <q-th v-for="col in props.cols" :key="col.name" :props="props">
+                {{ col.label }}
+              </q-th>
+            </q-tr>
+          </template>
+          <template v-slot:body="props">
+            <q-tr :props="props">
+              <!-- <q-td auto-width class="q-gutter-xs">
+                <q-btn color="positive " icon="zoom_in" dense @click="store.update(props.row.id)" size="sm" outline />
+                <q-btn color="negative " icon="clear" dense @click="store.删除主表行(props.row.id)" size="sm" outline />
+              </q-td> -->
+              <q-td v-for="col in props.cols" :key="col.name" :props="props">
+                {{ col.value }}
+              </q-td>
+            </q-tr>
+          </template>
+
+        </q-table>
 
     </div>
   </transition>

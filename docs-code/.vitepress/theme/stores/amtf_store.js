@@ -29,7 +29,7 @@ export const a4_store = defineStore("amtf", {
 			url: `https://env-00jxgn6qwtfx.dev-hz.cloudbasefunction.cn/a_admin/getall_nengliang`
 		}).then(({ data }) => {
 			console.log('data :>> ', data);
-			a4.能量表 = data
+			a4.能量表 = data.data
 			return data;
 		}).catch(() => {
 			throw "出错……";
