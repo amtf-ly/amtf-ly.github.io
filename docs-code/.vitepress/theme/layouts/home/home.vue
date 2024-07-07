@@ -1,7 +1,7 @@
 <template>
   <!-- <doc-stars /> -->
   <VPHero></VPHero>
-
+<div>
   <div class="q-pa-md row flex-center q-gutter-md">
     <q-card class="放大显影 金牌赞助">
       <q-card-section class="紫色渐变 text-white">
@@ -89,6 +89,12 @@
       </q-card-actions>
     </q-card>
   </div>
+
+  <a施主加持榜 :data="a4.data.未完待续项目" 标题="施主加持榜💪" class="q-ma-lg" />
+
+</div>
+
+
 </template>
 <script setup>
 import A广告 from "./A广告.vue";
@@ -97,6 +103,7 @@ import A裕民机械 from "./A裕民机械.vue";
 import vDraggable from "../../components/draggable";
 import { ref, onMounted } from "vue";
 import axios from "axios";
+import a施主加持榜 from './a施主加持榜.vue'
 
 import { a4_store } from '@the/stores/amtf_store'
 const {
