@@ -64,9 +64,6 @@ function 复制(params) {
 
 }
 
-
-
-
 const active = ref(true)
 import { ref, reactive, onMounted } from 'vue';
 import { useAmtf } from '../../utils/amtf.js'
@@ -78,15 +75,12 @@ const { 添加涟漪 } = useAmtf()
 
 let throttleTimeout;
 function 鼠标移动(e) {
+  // 添加涟漪(e)
   // 清除之前设置的定时器，确保不会在短时间内连续触发
   clearTimeout(throttleTimeout);
-
   // 设置新的定时器，0.2秒后执行处理函数
   throttleTimeout = setTimeout(function () {
-    // console.log('Mouse moved');
-    // console.log(`e 👉`, e)
     添加涟漪(e)
-    // 在这里可以添加你想要执行的代码
   }, 12); // 200毫秒 = 0.2秒
 }
 
