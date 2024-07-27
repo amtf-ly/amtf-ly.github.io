@@ -20,22 +20,37 @@
         <a未完待续 :data="a4.data.未完待续项目" 标题="未完待续👇……" class="q-mb-lg" />
 
         <q-btn-group push dense class="联系方式">
-          <q-btn color="orange-2" glossy dense text-color="black" push :label="`微信:${a4.data.联系方式.微信}`" icon="a4laba"
-            @click="复制(a4.data.联系方式.微信)" />
-          <q-btn color="orange-3" glossy dense text-color="black" push :label="`QQ:${a4.data.联系方式.QQ}`"
-            @click="复制(a4.data.联系方式.QQ)" />
-          <q-btn color="orange-4" glossy dense text-color="black" push :label="`QQ群:${a4.data.联系方式.QQ群}`"
+          <q-btn color="orange-2" glossy dense text-color="black" push :label="`微信群`" 
+          @click="alert=!alert" 
+          icon-right="a4weixin">
+            <!-- <q-tooltip transition-show="scale" transition-hide="scale" anchor="bottom end" >
+              <q-img src="wx.jpg" height="450px" width="350px" >
+              </q-img>
+            </q-tooltip> -->
+          </q-btn>
+          <q-btn color="orange-3" glossy dense text-color="black" push :label="`QQ群:${a4.data.联系方式.QQ群}`"
             @click="复制(a4.data.联系方式.QQ群)" />
-          <q-btn color="orange-5" glossy dense text-color="black" push :label="`bili`" icon-right="call_made"
-            :href="a4.data.联系方式.bili" target="_blank" />
+          <q-btn color="orange-4" glossy dense text-color="black" push :label="`bili`" :href="a4.data.联系方式.bili"
+            target="_blank" />
         </q-btn-group>
 
+        <q-btn-group push dense class="联系方式">
+          <q-btn color="orange-5" glossy dense text-color="black" push :label="`微信:${a4.data.联系方式.微信}`"
+            @click="复制(a4.data.联系方式.微信)" />
+          <q-btn color="orange-6" glossy dense text-color="black" push :label="`QQ:${a4.data.联系方式.QQ}`"
+            @click="复制(a4.data.联系方式.QQ)" />
+        </q-btn-group>
+
+        <q-dialog v-model="alert" auto-close>
+          <q-img src="wx.jpg" width="350px">
+          </q-img>
+        </q-dialog>
         <!-- <a收费服务 :data="收费服务项目" 标题="收费服务项目" /> -->
       </div>
       <div class="image 隐藏鼠标">
         <div class="image-container">
-          <div class="image-bg"></div><img class="VPImage 无界 image-src " src="amtf-无量寿.png" alt="amtf图片不见了" @click="添加涟漪"
-            @mousemove="鼠标移动">
+          <div class="image-bg"></div><img class="VPImage 无界 image-src " src="amtf-无量寿.png" alt="amtf图片不见了"
+            @click="添加涟漪" @mousemove="鼠标移动">
         </div>
       </div>
     </div>
@@ -72,6 +87,7 @@ import { useAmtf } from '../../utils/amtf.js'
 import a未完待续 from './未完待续.vue'
 // import a收费服务 from './收费服务.vue'
 const { 添加涟漪 } = useAmtf()
+const alert = ref(false)
 
 let throttleTimeout;
 function 鼠标移动(e) {

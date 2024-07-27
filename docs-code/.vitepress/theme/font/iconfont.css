@@ -1,16 +1,38 @@
 @font-face {
   font-family: "iconfont"; /* Project id 4316262 */
-  src: url('iconfont.woff2?t=1713175992972') format('woff2'),
-       url('iconfont.woff?t=1713175992972') format('woff'),
-       url('iconfont.ttf?t=1713175992972') format('truetype');
+  src: url('iconfont.woff2?t=1722102048850') format('woff2'),
+       url('iconfont.woff?t=1722102048850') format('woff'),
+       url('iconfont.ttf?t=1722102048850') format('truetype');
 }
 
 /* .iconfont { */
-  [class*="a4"] {
-    font-family: "iconfont" !important;
-    font-style: normal;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+[class*="a4"] {
+
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.a4weixin:before {
+  content: "\e649";
+}
+
+.a4dianji:before {
+  content: "\e644";
+}
+
+.a4cenglou:before {
+  content: "\e612";
+}
+
+.a4zihangchechuzu:before {
+  content: "\e662";
+}
+
+.a4chongdian:before {
+  content: "\e722";
 }
 
 .a4renminbi:before {
