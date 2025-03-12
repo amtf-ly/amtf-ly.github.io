@@ -16,7 +16,6 @@ import erpnext目录 from "../ERPNext/1.0 介绍/00目录"
 // import ElementPlus from 'unplugin-element-plus/vite'
 
 const require = createRequire(import.meta.url)
-const pkg = require("vitepress/package.json")
 
 export default defineConfig({
     ignoreDeadLinks: true,
@@ -35,6 +34,7 @@ export default defineConfig({
     vite: {
         server: {
             // open: true, //自动打开浏览器
+            port: 5188,
             proxy: {
                 "/api": {
                     target: "https://yiguxianyun.gitee.io/amtf-sj", //目标网站,服务端地址
@@ -58,7 +58,11 @@ export default defineConfig({
 
             // add plugin collapsed: true折叠目录
             // AutoSidebar({ prefix: ".", collapsed: true, 忽略后缀名: [".vue", ".js"] }),
-            AutoSidebar({ collapsed: true, 忽略后缀名: [".vue", ".js"], ignoreList: ["images", "zh", "snippets", "public"] }),
+            AutoSidebar({
+                collapsed: true,
+                忽略后缀名: [".vue", ".js"],
+                ignoreList: ["images", "zh", "snippets", "public"],
+            }),
             // vue({
             //     template: { transformAssetUrls }
             //   }),
@@ -68,18 +72,28 @@ export default defineConfig({
             //   })
         ],
         resolve: {
-            alias: [
-                // {
-                //     find: /^.*\/VPImage\.vue$/,
-                //     replacement: fileURLToPath(
-                //         new URL("./theme/components/VPImage.vue", import.meta.url)
-                //     ),
-                // },
-                {
-                    find: "@the",
-                    replacement: path.resolve(__dirname, "./theme/"),
+            alias: {
+                "@": fileURLToPath(new URL("../../", import.meta.url)),
+                "@the": fileURLToPath(new URL("./theme/", import.meta.url)),
+            },
+            // alias: [
+            //     {
+            //         find: "@the",
+            //         replacement: path.resolve(__dirname, "./theme/"),
+            //     },
+            //     {
+            //         find: "@",
+            //         replacement: path.resolve(__dirname, "../../"),
+            //     },
+            // ],
+        },
+        css: {
+            preprocessorOptions: {
+                scss: {
+                    /* 自动引入全局scss文件 */
+                    // additionalData: '@import "@the/css/quasar.variables.scss";',
                 },
-            ],
+            },
         },
     },
     // sitemap: {
@@ -173,12 +187,12 @@ function nav(): DefaultTheme.NavItem[] {
         {
             text: "SketchUp",
             activeMatch: "/su/",
-            link: "/su/01.介绍"
+            link: "/su/01.介绍",
         },
         {
             text: "ERPNext",
             activeMatch: "/ERPNext入坑笔记/",
-            link: "/ERPNext入坑笔记/01.介绍"
+            link: "/ERPNext入坑笔记/01.介绍",
         },
         // {
         //     text: "ERPNext",
@@ -193,6 +207,11 @@ function nav(): DefaultTheme.NavItem[] {
             link: "/多元文化/叮叮当当",
             activeMatch: "/多元文化/",
         },
+        {
+            text: "vue-easytable-laoyu",
+            link: "/vue-easytable-laoyu/叮叮当当",
+            activeMatch: "/vue-easytable-laoyu/",
+        },
         // {
         //     text: "指南",
         //     link: "/zh/guide/what-is-vitepress",
@@ -203,85 +222,5 @@ function nav(): DefaultTheme.NavItem[] {
         //     link: "/zh/reference/site-config",
         //     activeMatch: "/zh/reference/",
         // },
-    ]
-}
-
-function sidebarGuide(): DefaultTheme.SidebarItem[] {
-    return [
-        {
-            text: "简介",
-            collapsed: false,
-            items: [
-                { text: "例子", link: "aaamarkdown例子" },
-                { text: "什么是 VitePress？", link: "what-is-vitepress" },
-                { text: "快速开始", link: "getting-started" },
-                { text: "路由", link: "routing" },
-                { text: "部署", link: "deploy" },
-            ],
-        },
-        {
-            text: "写作",
-            collapsed: false,
-            items: [
-                { text: "Markdown 扩展", link: "markdown" },
-                { text: "资源处理", link: "asset-handling" },
-                { text: "frontmatter", link: "frontmatter" },
-                { text: "在 Markdown 使用 Vue", link: "using-vue" },
-                { text: "国际化", link: "i18n" },
-            ],
-        },
-        {
-            text: "自定义",
-            collapsed: false,
-            items: [
-                { text: "自定义主题", link: "custom-theme" },
-                { text: "扩展默认主题", link: "extending-default-theme" },
-                { text: "构建时数据加载", link: "data-loading" },
-                { text: "SSR 兼容性", link: "ssr-compat" },
-                { text: "连接 CMS", link: "cms" },
-            ],
-        },
-        {
-            text: "实验性功能",
-            collapsed: false,
-            items: [
-                { text: "MPA 模式", link: "mpa-mode" },
-                { text: "sitemap 生成", link: "sitemap-generation" },
-            ],
-        },
-        { text: "配置和 API 参考", base: "/zh/reference/", link: "site-config" },
-    ]
-}
-
-function sidebarReference(): DefaultTheme.SidebarItem[] {
-    return [
-        {
-            text: "参考",
-            items: [
-                { text: "站点配置", link: "site-config" },
-                { text: "frontmatter 配置", link: "frontmatter-config" },
-                { text: "运行时 API", link: "runtime-api" },
-                { text: "CLI", link: "cli" },
-                {
-                    text: "默认主题",
-                    base: "/zh/reference/default-theme-",
-                    items: [
-                        { text: "概览", link: "config" },
-                        { text: "导航栏", link: "nav" },
-                        { text: "侧边栏", link: "sidebar" },
-                        { text: "主页", link: "home-page" },
-                        { text: "页脚", link: "footer" },
-                        { text: "布局", link: "layout" },
-                        { text: "徽章", link: "badge" },
-                        { text: "团队页", link: "team-page" },
-                        { text: "上下页链接", link: "prev-next-links" },
-                        { text: "编辑链接", link: "edit-link" },
-                        { text: "最后更新时间戳", link: "last-updated" },
-                        { text: "搜索", link: "search" },
-                        { text: "Carbon Ads", link: "carbon-ads" },
-                    ],
-                },
-            ],
-        },
     ]
 }
