@@ -7,5 +7,5 @@
             "@the/*": ["docs/.vitepress/theme/*"]
         }
     },
-    "include": ["./docs-code/.vitepress/**/*"]
+    "include": ["./docs-code/.vitepress/**/*","./amtf/**/*"]
 }

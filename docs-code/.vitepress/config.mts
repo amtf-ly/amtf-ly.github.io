@@ -14,6 +14,7 @@ import { ElementPlusResolver } from "unplugin-vue-components/resolvers"
 
 import erpnext目录 from "../ERPNext/1.0 介绍/00目录"
 // import ElementPlus from 'unplugin-element-plus/vite'
+import vueJsx from '@vitejs/plugin-vue-jsx'
 
 const require = createRequire(import.meta.url)
 
@@ -47,7 +48,7 @@ export default defineConfig({
         },
         plugins: [
             // ElementPlus()
-
+            vueJsx(),
             //dev的时候可以用， build的时候会报错……
             // AutoImport({
             //     resolvers: [ElementPlusResolver()],
@@ -208,9 +209,9 @@ function nav(): DefaultTheme.NavItem[] {
             activeMatch: "/多元文化/",
         },
         {
-            text: "vue-easytable-laoyu",
-            link: "/vue-easytable-laoyu/叮叮当当",
-            activeMatch: "/vue-easytable-laoyu/",
+            text: "a-table",
+            link: "/a-table/01icon",
+            activeMatch: "/a-table/",
         },
         // {
         //     text: "指南",

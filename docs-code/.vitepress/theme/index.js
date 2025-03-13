@@ -33,6 +33,7 @@ import { createPinia } from 'pinia'
 // import DefaultTheme from 'vitepress/theme'
 
 import installQuasar from '@/amtf/install-quasar';
+import installTable from '@/amtf/install-table';
 
 // import ElementPlus from 'element-plus'
 export default {
@@ -44,6 +45,7 @@ export default {
         // initQuasar(app)
         initRouter(router)
         app.use(installQuasar)
+        app.use(installTable)
         // app.use(InstantSearch)
         // app.use(ElementPlus)
         app.use(createPinia())
