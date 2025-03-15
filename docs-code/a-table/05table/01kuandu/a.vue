@@ -1,26 +1,18 @@
 <template>
   <q-page padding class="q-gutter-y-md">
-    <div>
-      <h2>宽度</h2>
-      <q-card class="my-card">
-        <q-card-section>
-          1、表格宽度可以设置固定值。如：`style="width:900px;"`<br>
-          2、表格宽度可以设置动态值。如：`style="width:calc(100vh - 210px)"` 或者 `style="width:80%"`<br>
-        </q-card-section>
-      </q-card>
-    </div>
     <q-card class="my-card">
       <q-card-section>
         <div class="row">
-          <q-input v-model="width" label="width" />
+          <!-- <q-select v-model="width" :options="['width:80%', 'width:50%']" label="Standard" outlined use-input
+            new-value-mode="add-unique" /> -->
+          <q-select outlined v-model="width" use-input clearable @new-value="createValue" :options="filterOptions"
+            dense>
+            <template v-slot:before>
+              <div class="text-primary">动态设置style:</div>
+            </template>
+          </q-select>
         </div>
-        <ve-table :style="`width:${width}%`" :columns="columns" :table-data="tableData" />
-      </q-card-section>
-      <q-card-section>
-        <div class="row">
-          <q-input v-model="width" label="width" />
-        </div>
-        <ve-table :style="`width:${width}%`" :columns="columns" :table-data="tableData" />
+        <ve-table :style="width" :columns="columns" :table-data="tableData" />
       </q-card-section>
     </q-card>
 
@@ -30,11 +22,34 @@
 
 <script setup>
 import { ref, reactive } from 'vue';
-defineOptions({
-  name: 'table高度',
-  icon: 'school'
-});
-const width = ref(80)
+
+const filterOptions = ref(['width:80%', 'width:50%', 'width:900px', 'calc(55vw - 10px)'])
+
+function createValue(val, done) {
+  if (val.length > 0) {
+    if (!filterOptions.value.includes(val)) {
+      filterOptions.value.push(val)
+    }
+    done(val, 'toggle')
+  }
+}
+
+// function filterFn(val, update) {
+//   update(() => {
+//     if (val === '') {
+//       filterOptions.value = stringOptions
+//     }
+//     else {
+//       const needle = val.toLowerCase()
+//       filterOptions.value = stringOptions.filter(
+//         v => v.toLowerCase().indexOf(needle) > -1
+//       )
+//     }
+//   })
+// }
+
+const modelAddUnique = ref(null)
+const width = ref('width:80%')
 const 高度 = ref(200)
 const columns = reactive([
   { field: "name", key: "a", title: "Name", width: 100 },
