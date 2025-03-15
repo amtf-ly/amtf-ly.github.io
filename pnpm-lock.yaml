@@ -23,9 +23,15 @@ importers:
       element-plus:
         specifier: ^2.7.0
         version: 2.7.0(vue@3.4.21)
+      lodash:
+        specifier: ^4.17.21
+        version: 4.17.21
       lodash.debounce:
         specifier: ^4.0.8
         version: 4.0.8
+      mitt:
+        specifier: ^3.0.1
+        version: 3.0.1
       pinia:
         specifier: ^2.1.7
         version: 2.1.7(vue@3.4.21)
@@ -63,6 +69,9 @@ importers:
       markdown-it-mathjax3:
         specifier: ^4.3.2
         version: 4.3.2
+      resize-observer-polyfill:
+        specifier: ^1.5.1
+        version: 1.5.1
       sass:
         specifier: 1.70.0
         version: 1.70.0

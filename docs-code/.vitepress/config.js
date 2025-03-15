@@ -1,7 +1,7 @@
 import { createRequire } from "module"
-import { defineConfig, type DefaultTheme } from "vitepress"
+import { defineConfig } from "vitepress"
 // import AutoSidebar from "amtf-vitepress-auto-sidebar"
-import AutoSidebar from "./插件/index"
+import 成侧栏目录 from "../../amtf/vitepress/成侧栏目录"
 import { fileURLToPath, URL } from "node:url"
 import path from "node:path"
 
@@ -12,9 +12,8 @@ import AutoImport from "unplugin-auto-import/vite"
 import Components from "unplugin-vue-components/vite"
 import { ElementPlusResolver } from "unplugin-vue-components/resolvers"
 
-import erpnext目录 from "../ERPNext/1.0 介绍/00目录"
 // import ElementPlus from 'unplugin-element-plus/vite'
-import vueJsx from '@vitejs/plugin-vue-jsx'
+import vueJsx from "@vitejs/plugin-vue-jsx"
 
 const require = createRequire(import.meta.url)
 
@@ -59,10 +58,14 @@ export default defineConfig({
 
             // add plugin collapsed: true折叠目录
             // AutoSidebar({ prefix: ".", collapsed: true, 忽略后缀名: [".vue", ".js"] }),
-            AutoSidebar({
+            成侧栏目录({
+                path: "/docs-code",
                 collapsed: true,
                 忽略后缀名: [".vue", ".js"],
+                ignoreIndexItem:true,
                 ignoreList: ["images", "zh", "snippets", "public"],
+                // ignoreList: ["images", "zh", "snippets", "public", , "ERPNext入坑笔记", "su"],
+                // ignoreList: ["images", "zh", "snippets", "public", "多元文化", "ERPNext入坑笔记", "su"],
             }),
             // vue({
             //     template: { transformAssetUrls }
@@ -107,22 +110,22 @@ export default defineConfig({
     /* prettier-ignore */
     head: [
         ['meta', { name: 'viewport', content: 'user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1,width=device-width' }],
-        
-    //将 favicon.ico 放在公共目录中，如果设置了 base(部署在网站子路径时)，则使用 /base/favicon.ico
-    ['link', { rel: 'icon', href: '/favicon.ico' }],
-    ['link', { rel: 'icon', type: 'text/plain', href: '/favicon.ico' }],
-    ['link', { rel: 'icon', type: 'image/png', sizes: "128x128", href: '/icons/amtf-ml128.png' }],
-    ['link', { rel: 'icon', type: 'image/png', sizes: "96x96", href: '/icons/amtf-ml96.png' }],
-    ['link', { rel: 'icon', type: 'image/png', sizes: "32x32", href: '/icons/amtf-ml32.png' }],
-    ['link', { rel: 'icon', type: 'image/png', sizes: "16x16", href: '/icons/amtf-m16.png' }],
-    ['link', { rel: 'icon', type: 'image/ico', sizes: "16x16", href: '/amtf.ico' }],
-    ['meta', { name: 'theme-color', content: '#5f67ee' }],
-    ['meta', { name: 'og:type', content: 'website' }],
-    ['meta', { name: 'og:locale', content: 'en' }],
-    ['meta', { name: 'og:site_name', content: 'amtf' }],
-    ['meta', { name: 'og:image', content: '/icons/amtf-ml128.png' }],
-    ['script', { src: 'https://cdn.usefathom.com/script.js', 'data-site': 'AZBRSFGG', 'data-spa': 'auto', defer: '' }]
-  ],
+
+        //将 favicon.ico 放在公共目录中，如果设置了 base(部署在网站子路径时)，则使用 /base/favicon.ico
+        ['link', { rel: 'icon', href: '/favicon.ico' }],
+        ['link', { rel: 'icon', type: 'text/plain', href: '/favicon.ico' }],
+        ['link', { rel: 'icon', type: 'image/png', sizes: "128x128", href: '/icons/amtf-ml128.png' }],
+        ['link', { rel: 'icon', type: 'image/png', sizes: "96x96", href: '/icons/amtf-ml96.png' }],
+        ['link', { rel: 'icon', type: 'image/png', sizes: "32x32", href: '/icons/amtf-ml32.png' }],
+        ['link', { rel: 'icon', type: 'image/png', sizes: "16x16", href: '/icons/amtf-m16.png' }],
+        ['link', { rel: 'icon', type: 'image/ico', sizes: "16x16", href: '/amtf.ico' }],
+        ['meta', { name: 'theme-color', content: '#5f67ee' }],
+        ['meta', { name: 'og:type', content: 'website' }],
+        ['meta', { name: 'og:locale', content: 'en' }],
+        ['meta', { name: 'og:site_name', content: 'amtf' }],
+        ['meta', { name: 'og:image', content: '/icons/amtf-ml128.png' }],
+        ['script', { src: 'https://cdn.usefathom.com/script.js', 'data-site': 'AZBRSFGG', 'data-spa': 'auto', defer: '' }]
+    ],
     themeConfig: {
         // siteTitle: '😄',
         siteTitle: "",
@@ -183,7 +186,7 @@ export default defineConfig({
     },
 })
 
-function nav(): DefaultTheme.NavItem[] {
+function nav() {
     return [
         {
             text: "SketchUp",
@@ -210,7 +213,7 @@ function nav(): DefaultTheme.NavItem[] {
         },
         {
             text: "a-table",
-            link: "/a-table/01icon",
+            link: "/a-table/01icon/",
             activeMatch: "/a-table/",
         },
         // {

@@ -17,5 +17,5 @@
 
 
 <script setup>
-import collection from "./components/collection.vue"
+import collection from "./collection.vue"
 </script>

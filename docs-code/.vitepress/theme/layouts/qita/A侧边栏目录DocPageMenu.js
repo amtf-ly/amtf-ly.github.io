@@ -1,44 +1,31 @@
 import { isActive } from "../../../shared"
 import { useData } from "vitepress"
-
 import { normalizeLink } from "../../support/utils"
-
 // import { useSidebar } from "../../composables/sidebar"
 import { useSidebar } from "vitepress/theme"
-
 // import {Router} from 'vitepress/dist/client'
 import { useRouter } from "vitepress"
-
 import { QExpansionItem, QList, QItem, QItemSection, QIcon, QBadge, Ripple } from "quasar"
-
 import { mdiMenuDown } from "@quasar/extras/mdi-v6"
-import { h, ref, watch, onBeforeUpdate, withDirectives } from "vue"
+import { h, ref, watch, onBeforeUpdate, withDirectives, reactive } from "vue"
 // import { useRoute } from "vue-router"
-
 // import Menu from 'assets/menu.js'
 import "./DocPageMenu.sass"
 import { useDocStore } from "../store/index.js"
-
 import { computed } from "vue"
 import { useSidebarControl } from "../../composables/sidebar"
 // import { useSidebarControl } from 'vitepress/theme'
-
 // import { 目录obj } from "../../composables/sidebar"
-
-import { reactive } from "vue"
 
 function getParentProxy(proxy) {
     if (Object(proxy.$parent) === proxy.$parent) {
         return proxy.$parent
     }
-
     let { parent } = proxy.$
-
     while (Object(parent) === parent) {
         if (Object(parent.proxy) === parent.proxy) {
             return parent.proxy
         }
-
         parent = parent.parent
     }
 }
@@ -47,7 +34,6 @@ export default {
     setup() {
         // console.log("侧边栏 目录 setup执行了")
         // const {isActiveLink} = useSidebarControl(computed(() => props.item))
-
         const { sidebarGroups, hasSidebar } = useSidebar()
         // console.log(`sidebarGroups👉`, sidebarGroups.value)
         const { sidebar } = useSidebar()
@@ -79,10 +65,8 @@ export default {
         }
         // const $route = useRoute()
         const routePath = route.path
-
         const rootRef = ref(null)
         const docStore = useDocStore()
-
         // 监听route.path
         watch(
             () => {
@@ -96,13 +80,18 @@ export default {
         )
 
         const 目录obj = reactive({})
+        // console.log(`目录obj 👉`,目录obj)
         const { page } = useData()
         watch(
-            sidebar,
+            [sidebar, page],
             val => {
                 // console.log(`sidebar变化了👉val`, val)
-                val.map(menu => {
+                // console.log(`sidebar 👉`, sidebar)
+                // console.log(`目录obj 👉`,目录obj)
+                sidebar.value.map(menu => {
                     let isActiveLink = false
+                    // console.log(`page.value.relativePath 👉`, page.value.relativePath)
+                    // console.log(`menu 👉`, menu)
                     if (menu.items !== void 0) {
                         menu.items.map(item => {
                             isActiveLink = isActive(page.value.relativePath, item.link)
@@ -115,20 +104,23 @@ export default {
                         })
                     } else {
                         // const { isActiveLink } = useSidebarControl(computed(() => menu))
-                        isActiveLink = isActive(page.value.relativePath, menu.link)
+                        isActiveLink = isActive(page.value.relativePath, menu.link, true)
                         目录obj[menu.link] = isActiveLink
                     }
                 })
             },
             { immediate: true }
         )
+        
         watch(
-            [page],
+            // [page],
+            [],
             () => {
-                // console.log(`页面更新ing page.value.relativePath`, page.value.relativePath)
+                console.log(`页面更新ing page.value.relativePath`, page.value.relativePath)
                 // console.log(`页面更新ing page.value`, page.value)
                 // console.log(`目录obj👉`, 目录obj)
                 // 目录obj[item.value.link as any]=isActiveLink
+                // 去掉页面的后缀名 .md 好像没必要，反而添加了 index ，本来设置了忽略的
                 const kk = "/" + page.value.relativePath.replace(/\.[^.]*$/, "")
                 // console.log(`kk👉`, kk)
                 // console.log(`目录obj[kk]👉`, 目录obj[kk])
