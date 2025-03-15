@@ -16,6 +16,12 @@
         </div>
         <ve-table :style="`width:${width}%`" :columns="columns" :table-data="tableData" />
       </q-card-section>
+      <q-card-section>
+        <div class="row">
+          <q-input v-model="width" label="width" />
+        </div>
+        <ve-table :style="`width:${width}%`" :columns="columns" :table-data="tableData" />
+      </q-card-section>
     </q-card>
 
   </q-page>
