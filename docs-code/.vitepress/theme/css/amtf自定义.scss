@@ -50,6 +50,20 @@ h6 {
     padding: 0;
     line-height: 1.1em;
 }
+.vp-doc table {
+    display: table; 
+    border-collapse: separate; 
+    margin: 0; 
+    overflow-x: visible; 
+}
+.vp-doc td {
+    border: none;
+    padding: 0;
+}
+.vp-doc th, .vp-doc td {
+    border: none;
+    padding: 0;
+}
 .vp-doc {
     blockquote > p {
         font-size: 1em;
@@ -130,30 +144,30 @@ h6 {
   顶部导航模块样式修改
 **/
 .VPNavBarTitle {
-  .title {
-    transition: all 0.25s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+    .title {
+        transition: all 0.25s cubic-bezier(0.18, 0.89, 0.32, 1.28);
 
-    &:hover {
-      transform: scale(1.1);
-      color: #bd34fe;
+        &:hover {
+            transform: scale(1.1);
+            color: #bd34fe;
 
-      .VPImage {
-        transform: scale(1.25);
-      }
+            .VPImage {
+                transform: scale(1.25);
+            }
+        }
+
+        .VPImage {
+            transition: transform 0.5s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+            height: 40px;
+            border-radius: 50%;
+        }
     }
-
-    .VPImage {
-      transition: transform 0.5s cubic-bezier(0.18, 0.89, 0.32, 1.28);
-      height: 40px;
-      border-radius: 50%;
-    }
-  }
 }
 
 .q-drawer-container {
-  .q-drawer--standard {
-    background: transparent !important;
-  }
+    .q-drawer--standard {
+        background: transparent !important;
+    }
 }
 
 // 默认字体太小，看不清哦
@@ -164,16 +178,16 @@ h6 {
 .最小字体,
 th,
 td {
-  font-size: var(--最小字体) !important;
+    font-size: var(--最小字体) !important;
 }
 
 .q-item__section--side {
-  align-items: center !important;
+    align-items: center !important;
 }
 
 .加粗 {
-  .q-tab__label {
-    font-size: 16px;
-    font-weight: 700;
-  }
+    .q-tab__label {
+        font-size: 16px;
+        font-weight: 700;
+    }
 }

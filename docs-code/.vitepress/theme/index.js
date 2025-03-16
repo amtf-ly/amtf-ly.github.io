@@ -34,6 +34,7 @@ import { createPinia } from 'pinia'
 
 import installQuasar from '@/amtf/install-quasar';
 import installTable from '@/amtf/install-table';
+import installElementPlus from '@/amtf/install-element-plus';
 
 // import ElementPlus from 'element-plus'
 export default {
@@ -46,6 +47,7 @@ export default {
         initRouter(router)
         app.use(installQuasar)
         app.use(installTable)
+        app.use(installElementPlus)
         // app.use(InstantSearch)
         // app.use(ElementPlus)
         app.use(createPinia())

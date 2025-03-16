@@ -98,7 +98,7 @@ export default defineConfig({
                     // additionalData: '@import "@the/css/quasar.variables.scss";',
                 },
             },
-        },
+        }
     },
     // sitemap: {
     //   hostname: 'https://vitepress.dev',
