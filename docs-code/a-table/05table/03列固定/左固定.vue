@@ -1,8 +1,6 @@
 <template>
-  <q-card class="my-card">
-    <h6>
-      1、通过`scroll-width="1200"`设置滚动区域宽度，通过`style="width:900px"`设置外层容器宽度<br>2、通过`fixed:"left"`设置需要固定的左列
-    </h6>
+  <q-card class="q-gutter-y-md">
+
     <q-card-section>
       <ve-table style="width:900px" :scroll-width="1200" border-y :columns="columns" :table-data="tableData" />
     </q-card-section>

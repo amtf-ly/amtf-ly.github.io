@@ -1,6 +1,6 @@
 <template>
   <q-page padding class="q-gutter-y-md">
-    <q-card class="my-card">
+    <q-card class="q-gutter-y-md">
       <q-card-section>
         <div class="row">
           <q-select outlined v-model="高度" use-input clearable @new-value="createValue" :options="filterOptions" dense>

@@ -1,6 +1,5 @@
 <template>
-  <q-page padding class="q-gutter-y-md">
-    <q-card class="my-card">
+    <q-card class="q-gutter-y-md">
       <q-card-section>
         <div class="row">
           <!-- <q-select v-model="width" :options="['width:80%', 'width:50%']" label="Standard" outlined use-input
@@ -15,9 +14,6 @@
         <ve-table :style="width" :columns="columns" :table-data="tableData" />
       </q-card-section>
     </q-card>
-
-  </q-page>
-
 </template>
 
 <script setup>

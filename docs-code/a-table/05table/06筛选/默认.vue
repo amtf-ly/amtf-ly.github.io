@@ -1,12 +1,13 @@
 <template>
-  <q-card class="my-card">
-    <q-list bordered>
-      :::anchor 多条件筛选
-      :::demo 当筛选框内容很多时，`maxHeight` 属性设置筛选框的最大高度
-    </q-list>
+  <q-card class="q-gutter-y-md">
     <q-card-section>
-      <ve-table :max-height="300" :fixed-header="true" :columns="columns" :table-data="tableData" />
+      <ve-table :max-height="900" :fixed-header="true" :columns="columns" :table-data="tableData" />
     </q-card-section>
+    <q-card-section>
+      <!-- {{ tableData }} -->
+      <ve-icon name="search" />
+    </q-card-section>
+
   </q-card>
 </template>
 
@@ -19,34 +20,6 @@ const columns = reactive([
     title: "Name",
     align: "left",
     width: "15%",
-    // filter
-    filter: {
-      filterList: [
-        { value: 0, label: "John", selected: false },
-        {
-          value: 1,
-          label: "Dickerson",
-          selected: false,
-        },
-        { value: 2, label: "Larsen", selected: false },
-        { value: 3, label: "Geneva", selected: false },
-        { value: 4, label: "Jami", selected: false },
-      ],
-      isMultiple: true,
-      // filter confirm hook
-      filterConfirm: (filterList) => {
-        const labels = filterList
-          .filter((x) => x.selected)
-          .map((x) => x.label);
-        searchByNameField(labels);
-      },
-      // filter reset hook
-      filterReset: (filterList) => {
-        searchByNameField([]);
-      },
-      // max height
-      maxHeight: 900,
-    },
   },
   {
     field: "date",
@@ -54,6 +27,51 @@ const columns = reactive([
     title: "Date",
     align: "left",
     width: "15%",
+    // filter
+    filter: {
+      filterList: [
+        {
+          modelValue: 0,
+          label: "1900-05-20",
+          selected: false,
+        },
+        {
+          modelValue: 1,
+          label: "1910-06-20",
+          selected: false,
+        },
+        {
+          modelValue: 2,
+          label: "2000-07-20",
+          selected: false,
+        },
+        {
+          modelValue: 3,
+          label: "2010-08-20",
+          selected: false,
+        },
+        {
+          modelValue: 4,
+          label: "2020-09-20",
+          selected: false,
+        },
+      ],
+      // filter confirm hook
+      filterConfirm: (filterList) => {
+        console.log(`页面filterConfirm执行 ing👇`)
+        const labels = filterList
+          .filter((x) => x.selected)
+          .map((x) => x.label);
+        searchByDateField(labels);
+      },
+      // filter reset hook
+      filterReset: (filterList) => {
+        searchByDateField([]);
+      },
+      // filterIcon: () => {
+      //   // return <ve-icon name="search" />;
+      // },
+    },
   },
   {
     field: "hobby",
@@ -110,11 +128,11 @@ const sourceData = [
   },
 ]
 
-function searchByNameField(labels) {
+function searchByDateField(labels) {
   console.log(`labels 👉`, labels)
   let data = [];
   data = sourceData.filter(
-    (x) => labels.length === 0 || labels.includes(x.name),
+    (x) => labels.length === 0 || labels.includes(x.date),
   );
   tableData.length = []
   Object.assign(tableData, data)

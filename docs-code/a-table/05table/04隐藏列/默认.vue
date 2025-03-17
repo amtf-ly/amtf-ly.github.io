@@ -1,28 +1,14 @@
 <template>
-  <q-card class="my-card">
-    <q-list bordered>
-      基础功能
-      <q-item clickable v-ripple>
-        1、通过`fixed-header="true"`设置开启表头固定。默认为`true`
-      </q-item>
-      <q-item clickable v-ripple>
-        2、通过`max-height`设置表格最大高度
-      </q-item>
-    </q-list>
+  <q-card class="q-gutter-y-md">
+
     <q-card-section>
-      <q-checkbox left-label v-model="固定表头" label="固定表头" />
-      <q-checkbox left-label v-model="显隐表头" label="显隐表头" />
-    </q-card-section>
-    <q-card-section>
-      <ve-table :max-height="200" :fixed-header="固定表头" :columns="columns" :table-data="tableData" :show-header="显隐表头" />
+      <ve-table :columns="columns" :table-data="tableData" :columnHiddenOption="columnHiddenOption" />
     </q-card-section>
   </q-card>
 </template>
 
 <script setup>
 import { ref, reactive } from 'vue';
-const 固定表头 = ref(true)
-const 显隐表头 = ref(true)
 const columnHiddenOption = reactive(
   {
     // default hidden column keys

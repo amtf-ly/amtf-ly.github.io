@@ -1,10 +1,5 @@
 <template>
-  <q-card class="my-card">
-    <q-card-section>
-      <h6>
-        以下示例，列 Col1、Col2、Col3 列宽拖动通过 `disableResizing`被禁用了
-      </h6>
-    </q-card-section>
+  <q-card class="q-gutter-y-md">
     <q-card-section>
       <ve-table style="width:100%" :scroll-width="0" :columns="columns" :table-data="tableData" :border-around="true"
         :border-x="true" :border-y="true" :column-width-resize-option="columnWidthResizeOption" />

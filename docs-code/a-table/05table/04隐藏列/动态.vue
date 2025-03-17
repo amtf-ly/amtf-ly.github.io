@@ -1,10 +1,6 @@
 <template>
-  <q-card class="my-card">
-    <h6>
-      实例方法
+  <q-card class="q-gutter-y-md">
 
-      1、通过实例方法 `hideColumnsByKeys(keys)`将列隐藏 <br>2、通过实例方法 `showColumnsByKeys(keys)`将隐藏的列显示
-    </h6>
     <q-card-section>
       <button class="button-demo" @click="hideColumns(['col1'])">隐藏 col1 列</button>
       <button class="button-demo" @click="hideColumns(['col2'])">隐藏 col2 列</button>

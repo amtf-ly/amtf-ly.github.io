@@ -32,6 +32,9 @@ importers:
       mitt:
         specifier: ^3.0.1
         version: 3.0.1
+      mockjs:
+        specifier: ^1.1.0
+        version: 1.1.0
       pinia:
         specifier: ^2.1.7
         version: 2.1.7(vue@3.4.21)
@@ -1297,6 +1300,10 @@ packages:
 
   mlly@1.6.1:
     resolution: {integrity: sha512-vLgaHvaeunuOXHSmEbZ9izxPx3USsk8KCQ8iC+aTlp5sKRSoZvwhHh5L9VbKSaVC6sJDqbyohIS76E2VmHIPAA==}
+
+  mockjs@1.1.0:
+    resolution: {integrity: sha512-eQsKcWzIaZzEZ07NuEyO4Nw65g0hdWAyurVol1IPl1gahRwY+svqzfgfey8U8dahLwG44d6/RwEzuK52rSa/JQ==}
+    hasBin: true
 
   ms@2.1.2:
     resolution: {integrity: sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==}
@@ -3007,6 +3014,10 @@ snapshots:
       pathe: 1.1.2
       pkg-types: 1.0.3
       ufo: 1.5.3
+
+  mockjs@1.1.0:
+    dependencies:
+      commander: 9.2.0
 
   ms@2.1.2: {}
 

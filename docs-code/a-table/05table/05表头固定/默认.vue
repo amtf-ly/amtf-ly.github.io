@@ -1,17 +1,19 @@
 <template>
-  <q-card class="my-card">
-    <h6>
-      下面示例默认隐藏 hobby 和 name 列
-
-      通过 `defaultHiddenColumnKeys`属性设置默认隐藏的列</h6>
+  <q-card class="q-gutter-y-md">
     <q-card-section>
-      <ve-table :columns="columns" :table-data="tableData" :columnHiddenOption="columnHiddenOption" />
+      <q-checkbox left-label v-model="固定表头" label="固定表头" />
+      <q-checkbox left-label v-model="显隐表头" label="显隐表头" />
+    </q-card-section>
+    <q-card-section>
+      <ve-table :max-height="200" :fixed-header="固定表头" :columns="columns" :table-data="tableData" :show-header="显隐表头" />
     </q-card-section>
   </q-card>
 </template>
 
 <script setup>
 import { ref, reactive } from 'vue';
+const 固定表头 = ref(true)
+const 显隐表头 = ref(true)
 const columnHiddenOption = reactive(
   {
     // default hidden column keys

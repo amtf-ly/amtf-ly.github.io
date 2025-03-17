@@ -1,5 +1,5 @@
 <template>
-  <q-card class="my-card">
+  <q-card class="q-gutter-y-md">
     <q-checkbox left-label v-model="横向边框" label="横向边框" />
     <q-checkbox left-label v-model="纵向边框" label="纵向边框" />
     <q-checkbox left-label v-model="外边框" label="外边框" />
