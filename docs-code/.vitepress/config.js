@@ -62,8 +62,8 @@ export default defineConfig({
                 path: "/docs-code",
                 collapsed: true,
                 忽略后缀名: [".vue", ".js"],
-                ignoreIndexItem:true,
-                ignoreList: ["images", "zh", "snippets", "public"],
+                ignoreIndexItem: true,
+                ignoreList: ["images", "img", "zh", "snippets", "public"],
                 // ignoreList: ["images", "zh", "snippets", "public", , "ERPNext入坑笔记", "su"],
                 // ignoreList: ["images", "zh", "snippets", "public", "多元文化", "ERPNext入坑笔记", "su"],
             }),
@@ -191,7 +191,7 @@ function nav() {
         {
             text: "SketchUp",
             activeMatch: "/su/",
-            link: "/su/01.介绍",
+            link: "/su/01.入门参考",
         },
         {
             text: "ERPNext",
