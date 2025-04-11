@@ -198,14 +198,6 @@ function nav() {
             activeMatch: "/ERPNext入坑笔记/",
             link: "/ERPNext入坑笔记/01.介绍",
         },
-        // {
-        //     text: "ERPNext",
-        //     activeMatch: "/ERPNext/",
-        //     children: [
-        //         { text: "入坑笔记", link: "/ERPNext入坑笔记/01介绍"},
-        //         { text: "官网文档搬运", link: "/ERPNext/01 介绍/1.1 介绍" },
-        //     ],
-        // },
         {
             text: "多元文化",
             link: "/多元文化/叮叮当当",
@@ -216,15 +208,11 @@ function nav() {
             link: "/a-table/01icon/",
             activeMatch: "/a-table/",
         },
-        // {
-        //     text: "指南",
-        //     link: "/zh/guide/what-is-vitepress",
-        //     activeMatch: "/zh/guide/",
-        // },
-        // {
-        //     text: "参考",
-        //     link: "/zh/reference/site-config",
-        //     activeMatch: "/zh/reference/",
-        // },
+        {
+            text: "其他",
+            link: "/其他/quasar/icon",
+            activeMatch: "/其他/",
+        },
+
     ]
 }
