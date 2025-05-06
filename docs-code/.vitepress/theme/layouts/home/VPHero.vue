@@ -6,6 +6,12 @@
         <div class="text-h2">欢迎来到Wellcome
           <span class="text-紫磨真金">老鱼客栈~~</span>
         </div>
+        <div class="text-h4">主营业务:
+          <span class="text-紫磨真金">信息管理软件定制开发</span>
+        </div>
+        <div class="text-h4">经营特点:
+          <span class="text-紫磨真金">鄙人属于游击队开发者，迎宾保安、会计出纳、董事长总经理……哈是我一个人！交货周期会相对较长，价格会相对较低，聊得投机，免费定制也不是不可以~~</span>
+        </div>
         <!-- <q-list class="q-mb-lg a4.data.简介" bordered separator>
           <q-item clickable v-ripple dense v-for="i in a4.data.简介" :key="i.内容">
             <q-item-section avatar>
