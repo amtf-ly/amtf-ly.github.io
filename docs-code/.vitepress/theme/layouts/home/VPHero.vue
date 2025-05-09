@@ -3,14 +3,17 @@
     <div class="container">
       <div class="main">
         <h1 class="clip动态渐变文字 文字放大显影 flex-center">大驾光临，蓬荜生辉</h1><!--v-if-->
-        <div class="text-h2">欢迎来到Wellcome
+        <div class="text-h2 my-10">欢迎来到Wellcome
           <span class="text-紫磨真金">老鱼客栈~~</span>
         </div>
         <div class="text-h4">主营业务:
-          <span class="text-紫磨真金">信息管理软件定制开发</span>
+          <span class="text-紫磨真金">信息管理软件定制开发(网址、小程序、手机app都阔以)</span>
         </div>
-        <div class="text-h4">经营特点:
-          <span class="text-紫磨真金">鄙人属于游击队开发者，迎宾保安、会计出纳、董事长总经理……哈是我一个人！交货周期可能会相对较长，价格应该会相对较低，聊得投机，免费定制也不是不可以~~(比如说，您对自己的业务有很清晰的认知，确切的知道什么样的软件可以降低工作难度、提升效率，即使我这次不能赚钱，增加一个成功的案例也不错)</span>
+        <div class="text-h4">熟悉的技术栈:
+          <span class="text-紫磨真金">go、vue3、quasar、uni-app</span>
+        </div>
+        <div class="text-h4">……:
+          <span class="text-紫磨真金">鄙人属于游击队开发者，相对于正规军,交货周期可能会较长，价格应该会较低；具体价格要看具体项目，大概标准￥168元/工时</span>
         </div>
         <!-- <q-list class="q-mb-lg a4.data.简介" bordered separator>
           <q-item clickable v-ripple dense v-for="i in a4.data.简介" :key="i.内容">
@@ -151,6 +154,10 @@ const {
 
 <style scoped>
 .VPHero {
+  .my-10{
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
 
   .image-src,
   .image-bg {
