@@ -13,7 +13,7 @@
           <span class="text-紫磨真金">go、vue3、quasar、uni-app</span>
         </div>
         <div class="text-h4">……:
-          <span class="text-紫磨真金">鄙人属于游击队开发者，相对于正规军,交货周期可能会较长，价格应该会较低；具体价格要看具体项目，大概标准￥168元/工时</span>
+          <span class="text-紫磨真金">鄙人属于游击队开发者，相对于正规军,交货周期可能会较长，价格应该会较低；具体价格根据具体项目确定，大概标准￥168元/工时</span>
         </div>
         <!-- <q-list class="q-mb-lg a4.data.简介" bordered separator>
           <q-item clickable v-ripple dense v-for="i in a4.data.简介" :key="i.内容">
