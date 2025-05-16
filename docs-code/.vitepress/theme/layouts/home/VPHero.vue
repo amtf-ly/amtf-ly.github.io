@@ -37,8 +37,6 @@
               </q-img>
             </q-tooltip> -->
           </q-btn>
-          <q-btn color="orange-3" glossy dense text-color="black" push :label="`QQ群:${a4.data.联系方式.QQ群}`"
-            @click="复制(a4.data.联系方式.QQ群)" />
           <q-btn color="orange-4" glossy dense text-color="black" push :label="`bili`" :href="a4.data.联系方式.bili"
             target="_blank" />
         </q-btn-group>
@@ -46,7 +44,7 @@
         <q-btn-group push dense class="联系方式">
           <q-btn color="orange-5" glossy dense text-color="black" push :label="`微信:${a4.data.联系方式.微信}`"
             @click="复制(a4.data.联系方式.微信)" />
-          <q-btn color="orange-6" glossy dense text-color="black" push :label="`QQ:${a4.data.联系方式.QQ}`"
+          <q-btn color="orange-6" glossy dense text-color="black" push :label="`QQ号可以搜到微信:${a4.data.联系方式.QQ}`"
             @click="复制(a4.data.联系方式.QQ)" />
         </q-btn-group>
 
