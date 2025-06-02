@@ -189,6 +189,11 @@ export default defineConfig({
 function nav() {
     return [
         {
+            text: "老鱼开源平价",
+            activeMatch: "/老鱼开源平价/",
+            link: "/老鱼开源平价/01.桌球记账",
+        },
+        {
             text: "SketchUp",
             activeMatch: "/su/",
             link: "/su/01.入门参考",
