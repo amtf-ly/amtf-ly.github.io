@@ -196,7 +196,7 @@ function nav() {
         {
             text: "SketchUp",
             activeMatch: "/su/",
-            link: "/su/01.入门参考",
+            link: "/su/01.介绍",
         },
         {
             text: "ERPNext",
