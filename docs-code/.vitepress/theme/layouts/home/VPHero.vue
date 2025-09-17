@@ -7,13 +7,10 @@
           <span class="text-紫磨真金">老鱼客栈~~</span>
         </div>
         <div class="text-h4">主营业务:
-          <span class="text-紫磨真金">信息管理软件定制开发(网址、小程序、手机app都阔以)</span>
+          <span class="text-紫磨真金">鄙人从事软件开发工作，属于游击队形式，相对于正规军,技术和服务会差点，但是价格应该会低点，君请自酌~~具体可服务项目、价格，请移步👉<a href="https://sc.laoyu.xin" target="_blank" rel="noopener noreferrer">老鱼商城</a></span>
         </div>
-        <div class="text-h4">熟悉的技术栈:
-          <span class="text-紫磨真金">go、vue3、quasar、uni-app</span>
-        </div>
-        <div class="text-h4">……:
-          <span class="text-紫磨真金">鄙人属于游击队开发者，相对于正规军,交货周期可能会较长，价格应该会较低；具体价格根据具体项目确定，大概标准￥168元/工时</span>
+        <div class="text-h4">莲手传递美好:
+          <span class="text-紫磨真金">诚邀销售人才帮忙推广，提成5%~20%</span>
         </div>
         <!-- <q-list class="q-mb-lg a4.data.简介" bordered separator>
           <q-item clickable v-ripple dense v-for="i in a4.data.简介" :key="i.内容">
@@ -26,7 +23,7 @@
           </q-item>
         </q-list> -->
 
-        <a未完待续 :data="a4.data.未完待续项目" 标题="未完待续👇……" class="q-mb-lg" />
+        <!-- <a未完待续 :data="a4.data.未完待续项目" 标题="未完待续👇……" class="q-mb-lg" /> -->
 
         <q-btn-group push dense class="联系方式">
           <q-btn color="orange-2" glossy dense text-color="black" push :label="`微信群`" 
