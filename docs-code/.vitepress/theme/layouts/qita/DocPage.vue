@@ -2,30 +2,6 @@
   <div class="VPDoc doc-page__content">
     <div v-if="props.overline" class="doc-page__overline text-brand-primary">{{ props.overline }}</div>
 
-    <!-- <div class="doc-heading doc-h1" id="introduction" v-if="props.heading">
-      <div class="row items-center q-gutter-sm">
-        <div>{{ props.title }}</div>
-        <q-badge v-if="props.badge" :label="props.badge" />
-      </div>
-
-      <q-space />
-
-      <q-btn
-        v-if="props.editLink"
-        class="self-start q-ml-sm"
-        :href="editHref" target="_blank" rel="noopener noreferrer"
-        flat
-        round
-        color="brand-primary"
-        :icon="mdiPencil"
-      >
-        <q-tooltip class="row no-wrap items-center">
-          <span>Caught a mistake? Edit page in browser</span>
-          <q-icon class="q-ml-xs" :name="mdiFlash" size="2em" />
-        </q-tooltip>
-      </q-btn>
-    </div> -->
-
     <Content class="vp-doc" />
     <slot />
 
@@ -74,6 +50,21 @@ import { useEditLink } from '../../composables/edit-link'
 import { usePrevNext } from '../../composables/prev-next'
 import VPLink from '../../components/VPLink.vue'
 import VPDocFooterLastUpdated from '../../components/VPDocFooterLastUpdated.vue'
+const props = defineProps({
+  title: String,
+  desc: String,
+  overline: String,
+  badge: String,
+
+  heading: Boolean,
+  editLink: String,
+
+  toc: Array,
+  related: Array,
+  nav: Array,
+
+  scope: Object
+})
 
 const { theme, page, frontmatter } = useData()
 
@@ -92,9 +83,6 @@ const showFooter = computed(() => {
 })
 
 
-
-import { useMeta } from 'quasar'
-
 import {
   mdiPencil,
   mdiFlash,
@@ -107,27 +95,13 @@ import A页面目录DocPageToc from './A页面目录DocPageToc.vue'
 import getMeta from '../../assets/get-meta.js'
 import { useDocStore } from '../store/index.js'
 
-const props = defineProps({
-  title: String,
-  desc: String,
-  overline: String,
-  badge: String,
-
-  heading: Boolean,
-  editLink: String,
-
-  toc: Array,
-  related: Array,
-  nav: Array,
-
-  scope: Object
-})
-
-useMeta(
-  props.desc !== void 0
-    ? { title: props.title, meta: getMeta(props.title + ' | Quasar Framework', props.desc) }
-    : { title: props.title }
-)
+// dev正常，部署以后，直接进非首页也或者在非首页刷新，主体内容就会不见了！
+// import { useMeta } from 'quasar'
+// useMeta(
+//   props.desc !== void 0
+//     ? { title: props.title, meta: getMeta(props.title + ' | Quasar Framework', props.desc) }
+//     : { title: props.title }
+// )
 
 const docStore = useDocStore()
 // docStore.setToc(props.toc)
@@ -136,28 +110,12 @@ const tocClass = computed(() => {
   // console.log(`docStore.state.value.toc👉`, docStore.state.value.toc)
   // console.log(`docStore.state.value.toc !== void 0👉`, docStore.state.value.toc !== void 0)
   return `doc-page__toc-container--${docStore.state.value.toc !== void 0 ? 'fixed' : 'flowing'}`
-
 }
-
 )
 
 import { onMounted } from 'vue'
 import 监听图片点击 from '../监听图片点击';
 onMounted(() => {
-
-  // var links = document.head.getElementsByTagName('link');
-
-  // // 遍历每个link元素
-  // for (var i = 0; i < links.length; i++) {
-  //   var link = links[i];
-
-  //   // 检查link元素是否有href属性且包含'/'
-  //   if (link.href && link.href.includes('/')) {
-  //     // 替换href属性值
-  //     link.href = link.href.replace('/', '/');
-  //   }
-  // }
-
   try {
     监听图片点击()
   } catch (error) {

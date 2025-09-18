@@ -3,7 +3,7 @@
 
     <div class="doc-page-footer__copyright text-center q-pa-lg letter-spacing-100">
       <div>
-        大肚能容，笑口常开<br>到底了~~
+        大肚能容，笑口常开~~
       </div>
     </div>
   </div>

@@ -7,7 +7,8 @@
           <span class="text-紫磨真金">老鱼客栈~~</span>
         </div>
         <div class="text-h4">主营业务:
-          <span class="text-紫磨真金">鄙人从事软件开发工作，属于游击队形式，相对于正规军,技术和服务会差点，但是价格应该会低点，君请自酌~~具体可服务项目、价格，请移步👉<a href="https://sc.laoyu.xin" target="_blank" rel="noopener noreferrer">老鱼商城</a></span>
+          <span class="text-紫磨真金">鄙人从事软件开发工作，属于游击队形式，相对于正规军,技术和服务会差点，但是价格应该会低点，君请自酌~~具体可服务项目、价格，请移步👉<a
+              href="https://sc.laoyu.xin" target="_blank" rel="noopener noreferrer">老鱼商城</a></span>
         </div>
         <div class="text-h4">莲手传递美好:
           <span class="text-紫磨真金">诚邀销售人才帮忙推广，提成5%~20%</span>
@@ -25,24 +26,20 @@
 
         <!-- <a未完待续 :data="a4.data.未完待续项目" 标题="未完待续👇……" class="q-mb-lg" /> -->
 
-        <q-btn-group push dense class="联系方式">
+        <!-- <q-btn-group push dense class="联系方式">
           <q-btn color="orange-2" glossy dense text-color="black" push :label="`微信群`" 
           @click="alert=!alert" 
           icon-right="a4weixin">
-            <!-- <q-tooltip transition-show="scale" transition-hide="scale" anchor="bottom end" >
-              <q-img src="wx.jpg" height="450px" width="350px" >
-              </q-img>
-            </q-tooltip> -->
           </q-btn>
           <q-btn color="orange-4" glossy dense text-color="black" push :label="`bili`" :href="a4.data.联系方式.bili"
             target="_blank" />
-        </q-btn-group>
+        </q-btn-group> -->
 
         <q-btn-group push dense class="联系方式">
-          <q-btn color="orange-5" glossy dense text-color="black" push :label="`微信:${a4.data.联系方式.微信}`"
+          <q-btn color="orange-5" glossy dense text-color="black" push :label="`商务洽谈-微信号:${a4.data.联系方式.微信}`"
             @click="复制(a4.data.联系方式.微信)" />
-          <q-btn color="orange-6" glossy dense text-color="black" push :label="`QQ号可以搜到微信:${a4.data.联系方式.QQ}`"
-            @click="复制(a4.data.联系方式.QQ)" />
+          <q-btn color="orange-8" glossy dense text-color="black" push :label="`B站主页-操作演示`" :href="a4.data.联系方式.bili"
+            target="_blank" />
         </q-btn-group>
 
         <q-dialog v-model="alert" auto-close>
@@ -149,7 +146,7 @@ const {
 
 <style scoped>
 .VPHero {
-  .my-10{
+  .my-10 {
     margin-bottom: 10px;
     margin-top: 10px;
   }
