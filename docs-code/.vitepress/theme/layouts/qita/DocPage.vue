@@ -28,10 +28,10 @@
         <VPDocFooterLastUpdated />
       </div>
 
-      <div class="q-ml-lg" v-if="hasEditLink">
+      <!-- <div class="q-ml-lg" v-if="hasEditLink">
         <span>发现错误了?……</span>
         <doc-link class="q-ml-xs" :to="editLink.url">{{ editLink.text }}</doc-link>
-      </div>
+      </div> -->
     </div>
   </div>
   <!-- aaaaa{{docStore.state.value.toc}} -->

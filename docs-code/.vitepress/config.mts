@@ -187,9 +187,14 @@ export default defineConfig({
 function nav() {
   return [
     {
-      text: "老鱼OA",
-      activeMatch: "/老鱼OA/",
-      link: "/老鱼OA/index",
+      text: "OA🐱‍🏍",
+      activeMatch: "/OA/",
+      link: "/OA/1介绍",
+    },
+    {
+      text: "商城🛒",
+      activeMatch: "/商城/",
+      link: "/商城/1介绍",
     },
     {
       text: "SketchUp",
