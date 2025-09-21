@@ -1,1 +1,0 @@
-import{a5 as a,N as e,M as t,a6 as r}from"./chunks/framework.BVup9Xk-.js";const u=JSON.parse('{"title":"老鱼OA","description":"","frontmatter":{},"headers":[],"relativePath":"OA/1介绍.md","filePath":"OA/1介绍.md","lastUpdated":null}'),o={name:"OA/1介绍.md"},n=r("",9),l=[n];function s(_,i,h,c,p,d){return t(),e("div",null,l)}const m=a(o,[["render",s]]);export{u as __pageData,m as default};
