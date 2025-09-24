@@ -5,6 +5,10 @@
 
     <q-page-container>
       <q-page :class="pageClass" key="q-page">
+        <!-- <q-page-sticky position="top-right" :offset="[0, 0]">
+          <q-btn flat round dense :icon="docStore.state.value.最大化 ? 'fullscreen_exit' : 'fullscreen'"
+            size="md" @click="docStore.换最大化"/>
+        </q-page-sticky> -->
         <Page404 v-if="page.isNotFound" />
         <Home v-if="frontmatter.layout === 'home'" />
 
@@ -52,7 +56,7 @@ const { page, frontmatter } = useData()
 
 import DocStars from '@the/components/DocStars.vue'
 
-import { computed, watch, onMounted } from 'vue'
+import { computed, watch, onMounted, ref } from 'vue'
 import { mdiArrowUp } from '@quasar/extras/mdi-v6'
 
 import { provideDocStore } from './store/index.js'
@@ -90,7 +94,7 @@ const pageContentClass = computed(() =>
 //   } catch (error) {
 //   }
 // })
-
+const 最大化 = ref(false)
 
 </script>
 <style>
@@ -112,9 +116,8 @@ const pageContentClass = computed(() =>
   padding: 20px 0px;
   height: auto;
   cursor: zoom-out;
-  margin:0 auto
+  margin: 0 auto
 }
-
 </style>
 
 <style lang="sass">

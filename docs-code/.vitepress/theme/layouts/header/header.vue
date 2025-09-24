@@ -1,6 +1,8 @@
 <template>
-  <q-header class="doc-header header-toolbar" :class="docStore.state.value.是主页 ? '主页时头部' : ''" bordered
-    :height-hint="51">
+  <q-header class="doc-header header-toolbar" :class="{
+    '主页时头部': docStore.state.value.是主页,
+    'q-header--hidden': docStore.state.value.最大化
+  }" bordered :height-hint="51" reveal>
     <!-- <q-header :class="['header', $q.dark.isActive ? '' : 'text-dark']" bordered > -->
     <!-- <q-toolbar class="q-pl-lg q-pr-md no-wrap  VPNavBarTitle"> -->
     <q-toolbar class="q-pl-lg q-pr-md  VPNavBarTitle">
@@ -12,7 +14,7 @@
       </div>
       <!-- {{ withBase('/amtf-ml128.png') }} -->
       <!-- 顶部折叠按钮，用不到了……手机模式需要用 -->
-      <q-btn class="q-mx-sm " dense round @click="docStore.toggleMenuDrawer"  icon="menu" size="sm"></q-btn>
+      <q-btn class="q-mx-sm " dense round @click="docStore.toggleMenuDrawer" icon="menu" size="sm"></q-btn>
 
       <q-btn class="q-ml-xs 顶部 " icon="a4zitifangda" round size="xs" @click="加大字体"></q-btn>
       <q-btn class="q-ml-xs 顶部 " icon="a4zitisuoxiao" round size="xs" @click="减小字体"></q-btn>
@@ -38,14 +40,13 @@
 <script setup>
 import { withBase } from 'vitepress'
 
-
 import VPNavBarSearch from 'vitepress/dist/client/theme-default/components/VPNavBarSearch.vue'
 function kk() {
   console.log("kkkkkkk");
 }
 
 // let 想修改的元素=document.body
-let 想修改的元素=document.documentElement //代表 HTML 文档中的 <html> 元素
+let 想修改的元素 = document.documentElement //代表 HTML 文档中的 <html> 元素
 
 const 加大字体 = () => {
   const fontSize = getComputedStyle(想修改的元素).fontSize;

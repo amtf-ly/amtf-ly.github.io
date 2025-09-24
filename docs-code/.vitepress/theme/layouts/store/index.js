@@ -51,6 +51,7 @@ export function provideDocStore() {
         // $routeKK:{},
         state: {
             isFullscreen: false,
+            最大化: false,
             是主页: true,
             dark: $q.cookies.get("theme") == "dark",
             menuDrawer: false,
@@ -97,6 +98,20 @@ export function provideDocStore() {
         toggleTocDrawer() {
             store.state.value.tocDrawer = store.state.value.tocDrawer === false
         },
+
+        换最大化() {
+            // console.log(`换最大化 ing👇`)
+            // store.state.value.最大化 = store.state.value.tocDrawer === false
+            // console.log(`store.state.value.最大化 👉`, store.state.value.最大化)
+            // store.state.最大化 = store.state.最大化 === false
+            store.state.value.最大化 = store.state.value.最大化 === false
+            // console.log(`store.state.value.最大化 👉`, store.state.value.最大化)
+            if (store.state.value.最大化) {
+                store.state.value.menuDrawer = false
+            } else {
+                store.state.value.menuDrawer = true
+            }
+        },
     }
 
     function _toggleDark() {
@@ -121,7 +136,6 @@ export function provideDocStore() {
     // console.log("$route.meta",$route);
     // store.dark = computed(() => (store.state.value.dark || $route.meta.dark))
     store.dark = computed(() => store.state.value.dark)
-
     // 除了设置$q ,同时也要立即执行一次设置html dark 类
     watch(
         store.dark,
@@ -183,8 +197,6 @@ export function provideDocStore() {
                 //         }
                 //     })
                 // }
-
-
             }
             // let reg = new RegExp(`/([^/]+)`, "i");
             // let match = reg.exec(val)
