@@ -7,12 +7,11 @@
           <span class="text-紫磨真金">老鱼客栈~~</span>
         </div>
         <div class="text-h4">主营业务:
-          <span class="text-紫磨真金">鄙人从事软件开发工作，属于游击队形式，相对于正规军,技术和服务会差点，但是价格应该会低点，君请自酌~~具体可服务项目、价格，请移步👉<a
-              href="https://sc.laoyu.xin" target="_blank" rel="noopener noreferrer">老鱼商城</a></span>
+          <span class="text-primary">信息管理类软件定制;提供陀螺匠OA、ERPNext、CRMEB商城等线上技术支持服务(安装、使用指导、程序问题修复、改进升级)(￥168/小时 或者 ￥4998/年)</span>
         </div>
-        <div class="text-h4">莲手传递美好:
+        <!-- <div class="text-h4">莲手传递美好:
           <span class="text-紫磨真金">诚邀销售人才帮忙推广，提成5%~20%</span>
-        </div>
+        </div> -->
         <!-- <q-list class="q-mb-lg a4.data.简介" bordered separator>
           <q-item clickable v-ripple dense v-for="i in a4.data.简介" :key="i.内容">
             <q-item-section avatar>
